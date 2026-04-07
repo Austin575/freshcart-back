@@ -1,16 +1,19 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "user_db";
+// Load environment variables
+$host = getenv('DB_HOST') ?: 'localhost';
+$user = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: '';
+$database = getenv('DB_NAME') ?: 'user_db';
+$port = getenv('DB_PORT') ?: 3306;
 
-
-
-$conn = new mysqli('127.0.0.1', 'root', '', 'user_db', 3307); 
-
+// Create database connection
+$conn = new mysqli($host, $user, $password, $database, $port);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Set charset
+$conn->set_charset("utf8mb4");
 ?>
