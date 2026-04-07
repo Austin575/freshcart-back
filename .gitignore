@@ -1,12 +1,36 @@
-vendor/
+# Environment configuration
 .env
 .env.local
-*.log
-node_modules/
-.DS_Store
-.vscode/
-*.swp
-*.swo
-*~
-.idea/
+.env.*.local
+
+# Dependencies
+vendor/
 composer.lock
+
+# Logs
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
